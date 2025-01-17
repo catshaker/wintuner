@@ -2,7 +2,7 @@
 Install-Module -Name WinTuner
 #import
 import-module WinTuner
-#add source
+#add source for initial setup
 dotnet nuget add source "https://api.nuget.org/v3/index.json" --name "nuget.org"
 #then install winget-intune.cli via below
 dotnet tool install --global SvRooij.Winget-Intune.Cli --version 0.9.1
@@ -20,3 +20,6 @@ New-WtWingetPackage -PackageId "Valve.Steam" -PackageFolder "C:\path\to\packages
 
 #deploys based on built package - uses metadata from built package to input detection script, logo, etc.
 Deploy-WtWin32App -PackageId "Valve.Steam" -RootPackageFolder "C:\path\to\packagestorage" -Version "2.10.91.91"
+
+
+
